@@ -27,6 +27,8 @@ function animateGeometry() {
   states[2] = state3;
   states[3] = state4;
 
+  // Relative coordinates for the different states
+
   state1[0] = new State(cross, new Coordinate(42,60));
   state1[1] = new State(circle, new Coordinate(52,40));
   state1[2] = new State(triangle, new Coordinate(42,20));
@@ -52,7 +54,7 @@ function animateGeometry() {
 
   animation(1500, 20, sCurveTemporalDelta, ortogonalSpatialDelta, circleSpatialMagnitude, states[state], Unit.PERCENT, callback);
 
-  function callback(){
+  function callback(){ // Called once the animation is complete
     button.disabled = false;
     console.log("Completed animateGeometry.");
   }
